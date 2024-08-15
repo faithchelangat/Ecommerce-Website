@@ -76,7 +76,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': os.environ.get('DB_PASSWORD_NEW'),
+        'PASSWORD': os.environ['DB_PASSWORD_NEW'],
         'HOST': 'viaduct.proxy.rlwy.net',
         'PORT': '28868',
         #'ENGINE': 'django.db.backends.sqlite3',
