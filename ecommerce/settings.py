@@ -1,11 +1,12 @@
 from pathlib import Path
 import os
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-load_dotenv()
+#load_dotenv()
+DB_PASSWORD_NEW=os.environ['DB_PASSWORD_NEW']
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -33,6 +34,7 @@ INSTALLED_APPS = [
     'cart',
     'payment',
     'whitenoise.runserver_nostatic',
+    'paypal.standard.ipn',
 ]
 
 MIDDLEWARE = [
@@ -76,7 +78,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': os.environ['DB_PASSWORD_NEW'],
+        'PASSWORD': DB_PASSWORD_NEW,
         'HOST': 'viaduct.proxy.rlwy.net',
         'PORT': '28868',
         #'ENGINE': 'django.db.backends.sqlite3',
@@ -131,3 +133,6 @@ MEDIA_ROOT=os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+PAYPAL_TEST=True
+PAYPAL_RECEIVER_EMAIL='business@fai.com'
