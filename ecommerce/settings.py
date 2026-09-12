@@ -151,7 +151,7 @@ PAYPAL_RECEIVER_EMAIL = os.environ.get(
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 #STATICFILES_DIRS=['static/']
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
@@ -165,7 +165,7 @@ STORAGES = {
         'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage',
     },
 }
-
+WHITENOISE_MANIFEST_STRICT = False
 #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_ROOT=BASE_DIR/'staticfiles'
 
