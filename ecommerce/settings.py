@@ -1,25 +1,36 @@
 from pathlib import Path
 import os
+import dj_database_url
 #from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 #load_dotenv()
-DB_PASSWORD_NEW=os.environ['DB_PASSWORD_NEW']
+#DB_PASSWORD_NEW=os.environ['DB_PASSWORD_NEW']
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-j1(ji6=xf8_o5+=yn=@fb#yap)&=i#hk-jrl&s=vd!awenxol^'
-
+#SECRET_KEY = 'django-insecure-j1(ji6=xf8_o5+=yn=@fb#yap)&=i#hk-jrl&s=vd!awenxol^'
+SECRET_KEY = os.environ.get(
+    'SECRET_KEY',
+    'django-insecure-development-key'
+)
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['ecommerce-website-production-3edd.up.railway.app', 'https://ecommerce-website-production-3edd.up.railway.app']
-CSRF_TRUSTED_ORIGINS = ['https://ecommerce-website-production-3edd.up.railway.app']
-
+#DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+#ALLOWED_HOSTS = ['ecommerce-website-production-3edd.up.railway.app', 'https://ecommerce-website-production-3edd.up.railway.app']
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    '.onrender.com',
+]
+#CSRF_TRUSTED_ORIGINS = ['https://ecommerce-website-production-3edd.up.railway.app']
+CSRF_TRUSTED_ORIGINS = [
+    'https://*.onrender.com',
+]
 
 # Application definition
 
@@ -73,17 +84,22 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': DB_PASSWORD_NEW,
-        'HOST': 'viaduct.proxy.rlwy.net',
-        'PORT': '28868',
+#DATABASES = {
+    #'default': {
+      #  'ENGINE': 'django.db.backends.postgresql',
+       # 'NAME': BASE_DIR / 'db.sqlite3',
+        #'USER': 'postgres',
+        #'PASSWORD': '1234',
+        #'HOST': 'localhost',
+        #'PORT': '3000',
         #'ENGINE': 'django.db.backends.sqlite3',
         #'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    #}
+#}
+DATABASES = {
+    'default': dj_database_url.config(
+        default=os.environ.get('DATABASE_URL')
+    )
 }
 
 
@@ -122,7 +138,19 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS=['static/']
+#STATICFILES_DIRS=['static/']
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
+
+STORAGES = {
+    'default': {
+        'BACKEND': 'django.core.files.storage.FileSystemStorage',
+    },
+    'staticfiles': {
+        'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage',
+    },
+}
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_ROOT=BASE_DIR/'staticfiles'
@@ -134,5 +162,4 @@ MEDIA_ROOT=os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-PAYPAL_TEST=True
-PAYPAL_RECEIVER_EMAIL='business@fai.com'
+PAYPAL_TEST = True
