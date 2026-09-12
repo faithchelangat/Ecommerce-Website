@@ -144,7 +144,10 @@ USE_I18N = True
 
 USE_TZ = True
 
-
+PAYPAL_RECEIVER_EMAIL = os.environ.get(
+    'PAYPAL_RECEIVER_EMAIL',
+    ''
+)
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
