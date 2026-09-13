@@ -1,0 +1,179 @@
+[
+{
+  "model": "storefront.category",
+  "pk": 1,
+  "fields": {
+    "name": "Cell Phone"
+  }
+},
+{
+  "model": "storefront.category",
+  "pk": 2,
+  "fields": {
+    "name": "Novels"
+  }
+},
+{
+  "model": "storefront.category",
+  "pk": 3,
+  "fields": {
+    "name": "Beauty Products"
+  }
+},
+{
+  "model": "storefront.product",
+  "pk": 1,
+  "fields": {
+    "name": "Iphone",
+    "price": "999.99",
+    "category": 1,
+    "description": "This is an Iphone",
+    "image": "uploads/product/iphone.jpeg",
+    "on_sale": true,
+    "sale_price": "888.00"
+  }
+},
+{
+  "model": "storefront.product",
+  "pk": 2,
+  "fields": {
+    "name": "Android",
+    "price": "899.99",
+    "category": 1,
+    "description": "This is an android",
+    "image": "uploads/product/android.jpeg",
+    "on_sale": false,
+    "sale_price": "0.00"
+  }
+},
+{
+  "model": "storefront.product",
+  "pk": 3,
+  "fields": {
+    "name": "Lotion",
+    "price": "29.99",
+    "category": 3,
+    "description": "This is a body Lotion",
+    "image": "uploads/product/path_and_body_works.webp",
+    "on_sale": false,
+    "sale_price": "0.00"
+  }
+},
+{
+  "model": "storefront.product",
+  "pk": 4,
+  "fields": {
+    "name": "Jelly",
+    "price": "100.00",
+    "category": 3,
+    "description": "Body moisturiser",
+    "image": "uploads/product/cerave_3k.webp",
+    "on_sale": false,
+    "sale_price": "0.00"
+  }
+},
+{
+  "model": "storefront.product",
+  "pk": 5,
+  "fields": {
+    "name": "Lip Stick",
+    "price": "200.00",
+    "category": 3,
+    "description": "This is a lipstick",
+    "image": "uploads/product/img1.png",
+    "on_sale": false,
+    "sale_price": "0.00"
+  }
+},
+{
+  "model": "storefront.product",
+  "pk": 6,
+  "fields": {
+    "name": "Beauty Blender",
+    "price": "300.00",
+    "category": 3,
+    "description": "This is a beauty blender",
+    "image": "uploads/product/images.jpg",
+    "on_sale": false,
+    "sale_price": "0.00"
+  }
+},
+{
+  "model": "storefront.product",
+  "pk": 7,
+  "fields": {
+    "name": "Skin Care",
+    "price": "1000.22",
+    "category": 3,
+    "description": "Skin care product",
+    "image": "uploads/product/prod1.webp",
+    "on_sale": false,
+    "sale_price": "0.00"
+  }
+},
+{
+  "model": "storefront.product",
+  "pk": 8,
+  "fields": {
+    "name": "Alchemist by Paulo Choelho",
+    "price": "200.12",
+    "category": 2,
+    "description": "This magical story of Santiago a Shepherd boy who dreams of travelling the world to seek the most wonderful treasure known to man",
+    "image": "uploads/product/Alchemist.jpeg",
+    "on_sale": false,
+    "sale_price": "0.00"
+  }
+},
+{
+  "model": "storefront.product",
+  "pk": 9,
+  "fields": {
+    "name": "Make It Stick",
+    "price": "300.00",
+    "category": 2,
+    "description": "A novel",
+    "image": "uploads/product/Make_it_stick.png",
+    "on_sale": false,
+    "sale_price": "0.00"
+  }
+},
+{
+  "model": "storefront.product",
+  "pk": 10,
+  "fields": {
+    "name": "Atomic habits",
+    "price": "400.00",
+    "category": 2,
+    "description": null,
+    "image": "uploads/product/Atomic_habits.jpeg",
+    "on_sale": true,
+    "sale_price": "350.00"
+  }
+},
+{
+  "model": "storefront.product",
+  "pk": 11,
+  "fields": {
+    "name": "Elon Musk by Walter",
+    "price": "500.55",
+    "category": 2,
+    "description": null,
+    "image": "uploads/product/Elon_Musk.jpeg",
+    "on_sale": false,
+    "sale_price": "0.00"
+  }
+},
+{
+  "model": "storefront.product",
+  "pk": 12,
+  "fields": {
+    "name": "How to know a person",
+    "price": "150.00",
+    "category": 2,
+    "description": null,
+    "image": "uploads/product/How_to_know_a_person.jpeg",
+    "on_sale": false,
+    "sale_price": "0.00"
+  }
+}
+]
